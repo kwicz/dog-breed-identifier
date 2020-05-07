@@ -4,6 +4,8 @@
 
 ##  By K. Wicz
 
+[View Live](https://kwicz.github.io/dog-breed-identifier/)
+
 ![Project Preview](preview.png)
 
 ## Setup/Installation Requirements

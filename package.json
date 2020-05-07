@@ -1,5 +1,5 @@
 {
-  "name": "tensorflow-tutorial",
+  "name": "dog-breed-identifier",
   "homepage": "http://kwicz.github.io/dog-breed-identifier",
   "version": "0.1.0",
   "private": true,
