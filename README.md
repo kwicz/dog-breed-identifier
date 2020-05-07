@@ -4,6 +4,7 @@
 
 ##  By K. Wicz
 
+![Project Preview](preview.png)
 
 ## Setup/Installation Requirements
 
