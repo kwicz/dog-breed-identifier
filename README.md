@@ -2,11 +2,11 @@
 
 #### A web application to identify dog breeds using trained MobileNet models.
 
-##  By K. Wicz
+## By K. Wicz
 
 [View Live](https://kwicz.github.io/dog-breed-identifier/)
 
-![Project Preview](preview.png)
+![Project Preview](remodel-screenshot.png)
 
 ## Setup/Installation Requirements
 
@@ -75,16 +75,18 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-
 ## Support and Contact Details
+
 _Have a bug or an issue with this application? [Open a new issue](https://github.com/kwicz/dog-breed-identifier/issues) here on GitHub._
 
 ## Technologies Used
-* This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-* [Tensorflow tutorial by Jonny Kalambay](https://levelup.gitconnected.com/build-ad-dog-classifier-with-react-and-tensorflow-js-in-minutes-f08e98608a65)
-* Designed with [Material-UI](https://material-ui.com/)
+
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [Tensorflow tutorial by Jonny Kalambay](https://levelup.gitconnected.com/build-ad-dog-classifier-with-react-and-tensorflow-js-in-minutes-f08e98608a65)
+- Designed with [Material-UI](https://material-ui.com/)
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
 
 Copyright (c) 2020 **_K. Wicz_**
