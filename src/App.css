@@ -1,40 +1,162 @@
+/* ============================================================
+   Fetch — Dog Breed Identifier
+   Parisian edition
+   ============================================================ */
+
+:root {
+  --bone:    #FAF8F5;
+  --paper:   #FFFFFF;
+  --mist:    #E8E4DD;
+  --whisper: #8A8279;
+  --ink:     #1A1714;
+  --serif: "Playfair Display", "Didot", "Bodoni MT", Georgia, serif;
+  --body:  "Cormorant Garamond", "Garamond", "Times New Roman", serif;
+  --mono:  "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --r-md: 8px;
+  --r-lg: 16px;
+  --max: 560px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+
 body {
-  color: black;
-  background:#FF8A80;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--ink); color: var(--bone); }
+
+.page { position: relative; min-height: 100vh; overflow: hidden; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.center { text-align: center; }
+section { padding: 80px 0 40px; }
+
+input[type="file"] {
+  width: 0.1px; height: 0.1px; opacity: 0;
+  overflow: hidden; position: absolute; z-index: -1;
+}
+
+/* ------------- Type ------------- */
+h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+.subtitle {
+  color: var(--whisper);
+  font-size: 18px;
+  margin: 0 0 32px;
+}
+.status {
+  color: var(--whisper);
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* ------------- Dropzone ------------- */
+.dropzone {
+  border: 1px dashed var(--mist);
+  border-radius: var(--r-md);
+  padding: 48px 32px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.dropzone:hover { border-color: var(--ink); }
+.dropzone:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.dropzone p { margin: 0; font-size: 16px; color: var(--whisper); }
+.dropzone p strong { color: var(--ink); font-weight: 500; }
+
+/* ------------- Card (photo + results) ------------- */
+.card {
+  background: var(--paper);
+  border: 1px solid var(--mist);
+  border-radius: var(--r-lg);
+  padding: 24px;
   display: flex;
-  justify-content: center;
- }
- div {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
+  flex-direction: column;
   align-items: center;
-  padding: 30px;
- }
- input {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
+  gap: 20px;
+}
+.preview {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: var(--r-md);
+}
+.results { width: 100%; text-align: center; }
+.breed {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.confidence {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--whisper);
+  max-width: 300px;
+  margin: 0 auto 8px;
+}
+.bar {
+  flex: 1; height: 2px;
+  background: var(--mist);
+  border-radius: 1px;
   overflow: hidden;
-  position: absolute;
-  z-index: -1;
- }
- button,
- label,
- ul {
-  width: 300px;
-  box-sizing: border-box;
-  border: solid 1px white;
-  font-size: 24px;
-  margin: auto;
-  padding: 10px;
- }
- img {
-  width: 300px;
-  /* margin-bottom: 25px; */
- }
- ul {
-  list-style: none;
-  padding: 10px;
-  /* margin-bottom: 25px; */
- }
+}
+.bar i {
+  display: block; height: 100%;
+  background: var(--ink);
+  transition: width 1s cubic-bezier(.4, 0, .2, 1);
+}
+.also {
+  font-size: 15px;
+  color: var(--whisper);
+  font-style: italic;
+}
+
+/* ------------- Button ------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 24px;
+  border-radius: 2px;
+  font-family: var(--body);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.btn-primary { background: var(--ink); color: var(--bone); }
+.btn-primary:hover { background: #000; }
+
+/* ------------- Dogs at bottom ------------- */
+.dogs-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ------------- Responsive ------------- */
+@media (max-width: 600px) {
+  section { padding: 48px 0 24px; }
+  h1 { font-size: 36px; }
+}
