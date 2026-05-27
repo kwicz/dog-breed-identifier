@@ -35,7 +35,7 @@ body {
 .page { position: relative; min-height: 100vh; overflow: hidden; }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .center { text-align: center; }
-section { padding: 80px 0 40px; }
+section { padding: 80px 0 40px; position: relative; z-index: 1; }
 
 input[type="file"] {
   width: 0.1px; height: 0.1px; opacity: 0;
